@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'dart:developer';
 import 'package:http/http.dart' as http;
 import '../models/notes.dart';
+import "../providerr/notes_provider.dart";
 
 class ApiService {
   static const String _baseUrl = "https://paymates.onrender.com/notes";
@@ -70,6 +71,7 @@ class ApiService {
       Notes note = Notes.fromMap(noteMap);
       notes.add(note);
     }
+    notes.sort((a,b)=>b.dateadded!.compareTo(a.dateadded!));
     return notes;
   }
 }
