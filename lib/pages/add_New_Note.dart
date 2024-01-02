@@ -43,17 +43,6 @@ class _AddNewPageState extends State<AddNewPage> {
     Navigator.pop(context);
   }
 
-  void updateNote()
-  {
-    int titleChange =(widget.note!.totalamt!) - (widget.note!.title!);
-    widget.note!.totalamt =(titleChange)+(int.tryParse(titlecontroller.text)!);
-    widget.note!.title=int.tryParse(titlecontroller.text);
-    widget.note!.content=contentcontroller.text;
-    widget.note!.dateadded=DateTime.now();
-    Provider.of<NotesProvider>(context,listen: false).updateNotes(widget.note!);
-    Navigator.pop(context);
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -64,7 +53,7 @@ class _AddNewPageState extends State<AddNewPage> {
               onPressed:(){
                 if(widget.isUpdate)
                 {
-                  updateNote();
+                  // updateNote();
                 }
                 else
                 {

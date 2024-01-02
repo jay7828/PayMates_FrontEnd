@@ -71,7 +71,7 @@ class ApiService {
       Notes note = Notes.fromMap(noteMap);
       notes.add(note);
     }
-    notes.sort((a,b)=>b.dateadded!.compareTo(a.dateadded!));
+    // notes.sort((a,b)=>b.dateadded!.compareTo(a.dateadded!));
     return notes;
   }
 }
